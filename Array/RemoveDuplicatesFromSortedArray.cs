@@ -2,7 +2,7 @@
 
 namespace leetcode_training.Array
 {
-    /*
+	/*
 	https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/727/
 	Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once.The relative order of the elements should be kept the same.
 	Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums.More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result.It does not matter what you leave beyond the first k elements.
@@ -16,12 +16,12 @@ namespace leetcode_training.Array
 	-100 <= nums[i] <= 100
 	nums is sorted in non-decreasing order.
 	*/
-    internal class RemoveDuplicatesFromSortedArray : IExercise
+	internal class RemoveDuplicatesFromSortedArray : IExercise
 	{
-        int[] inputArray;
+		int[] inputArray;
 
-        public RemoveDuplicatesFromSortedArray(int[] inputArray)
-        {
+		public RemoveDuplicatesFromSortedArray(int[] inputArray)
+		{
 			this.inputArray = inputArray;
 		}
 
@@ -31,9 +31,9 @@ namespace leetcode_training.Array
 			var currentValue = nums[0];
 			var lastUniquePosition = 0;
 
-			for (int i = 1; i < nums.Length; i++)
+			for(int i = 1; i < nums.Length; i++)
 			{
-				if (nums[i] == currentValue) continue;
+				if(nums[i] == currentValue) continue;
 				currentValue = nums[i];
 				nums[++lastUniquePosition] = nums[i];
 				uniqueCounter++;
@@ -44,10 +44,12 @@ namespace leetcode_training.Array
 
 		public void DoWork()
 		{
+			Console.WriteLine("\n=== Starting of " + GetType().Name + " exercise.");
 			Console.WriteLine("Input array: [" + string.Join(", ", inputArray) + "]");
 			var uniqueNumbers = RemoveDuplicates(inputArray);
 			Console.WriteLine("unique numbers: " + uniqueNumbers);
 			Console.WriteLine("Result array: [" + string.Join(", ", inputArray) + "]");
+			Console.WriteLine("=== Finish of " + GetType().Name + " exercise.\n");
 		}
 	}
 }

@@ -64,9 +64,11 @@ Constraints:
 
 		public void DoWork()
 		{
+			Console.WriteLine("\n=== Starting of " + GetType().Name + " exercise.");
 			Console.WriteLine("Input array: [" + string.Join(", ", inputArray) + "]");
 			var maxProfit = MaxProfit(inputArray);
 			Console.WriteLine("Maximum profit: " + maxProfit);
+			Console.WriteLine("=== Finish of " + GetType().Name + " exercise.\n");
 		}
 	}
 }
