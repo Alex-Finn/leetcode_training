@@ -2,12 +2,13 @@
 using leetcode_training.Array;
 using leetcode_training.Interfaces;
 
-var exercise1 = new RemoveDuplicatesFromSortedArray(new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 });
-var exercise2 = new BestTimeToBuyAndSellStockII(new int[] { 7,1,5,3,6,4 });
+var exercises = new IExercise[] {
+	new RemoveDuplicatesFromSortedArray(new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 }),
+	new BestTimeToBuyAndSellStockII(new int[] { 7, 1, 5, 3, 6, 4 }),
+	new RotateArray(new int[] { 1, 2, 3, 4, 5, 6, 7 }, 3)
+};
 
-var exercises = new IExercise[] {exercise1, exercise2};
-
-foreach (var exercise in exercises)
+foreach(var exercise in exercises)
 {
 	exercise.DoWork();
 }
