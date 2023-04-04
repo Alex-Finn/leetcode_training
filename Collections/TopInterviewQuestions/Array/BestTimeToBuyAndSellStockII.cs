@@ -1,6 +1,6 @@
-﻿using leetcode_training.Interfaces;
+﻿using LeetCodeTraining.Interfaces;
 
-namespace leetcode_training.Array
+namespace LeetCodeTraining.Collections.TopInterviewQuestions.Array
 {
 	/*
 	 * 

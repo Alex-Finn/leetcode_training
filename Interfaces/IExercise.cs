@@ -1,4 +1,4 @@
-﻿namespace leetcode_training.Interfaces
+﻿namespace LeetCodeTraining.Interfaces
 {
 	internal interface IExercise
 	{

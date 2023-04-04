@@ -1,9 +1,12 @@
-﻿using leetcode_training.Interfaces;
-/*
+﻿using LeetCodeTraining.Interfaces;
+
+namespace LeetCodeTraining.Collections.TopInterviewQuestions.Array
+{
+	/*
 https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/646/
 Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
 
- 
+
 
 Example 1:
 
@@ -20,14 +23,14 @@ Output: [3,99,-1,-100]
 Explanation: 
 rotate 1 steps to the right: [99,-1,-100,3]
 rotate 2 steps to the right: [3,99,-1,-100]
- 
+
 
 Constraints:
 
 1 <= nums.length <= 105
 -231 <= nums[i] <= 231 - 1
 0 <= k <= 105
- 
+
 
 Follow up:
 
@@ -38,8 +41,6 @@ Could you do it in-place with O(1) extra space?
 
 
 */
-namespace leetcode_training.Array
-{
 	internal class RotateArray : IExercise
 	{
 		int[] inputArray;

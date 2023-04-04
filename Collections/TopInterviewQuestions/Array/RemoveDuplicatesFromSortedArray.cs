@@ -1,6 +1,6 @@
-﻿using leetcode_training.Interfaces;
+﻿using LeetCodeTraining.Interfaces;
 
-namespace leetcode_training.Array
+namespace LeetCodeTraining.Collections.TopInterviewQuestions.Array
 {
 	/*
 	https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/727/
