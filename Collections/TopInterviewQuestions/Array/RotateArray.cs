@@ -1,4 +1,4 @@
-﻿using LeetCodeTraining.Interfaces;
+﻿using LeetCodeTraining.Abstractions;
 
 namespace LeetCodeTraining.Collections.TopInterviewQuestions.Array
 {
@@ -41,29 +41,23 @@ Could you do it in-place with O(1) extra space?
 
 
 */
-	internal class RotateArray : IExercise
+	internal class RotateArray : Exercise
 	{
-		int[] inputArray;
-		int k;
+		public override Action CoreOperation { get; }
 
 		public RotateArray(int[] inputArray, int k)
 		{
-			this.inputArray = inputArray;
-			this.k = k;
+			CoreOperation = () =>
+			{
+				Console.WriteLine($"Input array: [{string.Join(", ", inputArray)}]. Number of steps: {k}");
+				Rotate(inputArray, k);
+				Console.WriteLine($"Result array: [{string.Join(", ", inputArray)}]");
+			};
 		}
 
 		private void Rotate(int[] nums, int k)
 		{
 
-		}
-
-		public void DoWork()
-		{
-			Console.WriteLine("\n=== Starting of " + GetType().Name + " exercise.");
-			Console.WriteLine("Input array: [" + string.Join(", ", inputArray) + "]. Number of steps: " + k);
-			Rotate(inputArray, k);
-			Console.WriteLine("Result array: [" + string.Join(", ", inputArray) + "]");
-			Console.WriteLine("=== Finish of " + GetType().Name + " exercise.\n");
 		}
 	}
 }

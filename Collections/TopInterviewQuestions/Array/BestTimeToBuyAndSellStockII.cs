@@ -1,4 +1,4 @@
-﻿using LeetCodeTraining.Interfaces;
+﻿using LeetCodeTraining.Abstractions;
 
 namespace LeetCodeTraining.Collections.TopInterviewQuestions.Array
 {
@@ -38,13 +38,18 @@ Constraints:
 1 <= prices.length <= 3 * 104
 0 <= prices[i] <= 104
 	 */
-	internal class BestTimeToBuyAndSellStockII : IExercise
+	internal class BestTimeToBuyAndSellStockII : Exercise
 	{
-		int[] inputArray;
+		public override Action CoreOperation { get; }
 
-		public BestTimeToBuyAndSellStockII(int[] inputArray)
+		public BestTimeToBuyAndSellStockII(int[] inputArray) : base()
 		{
-			this.inputArray = inputArray;
+			CoreOperation = () =>
+			{
+				Console.WriteLine("Input array: [" + string.Join(", ", inputArray) + "]");
+				var maxProfit = MaxProfit(inputArray);
+				Console.WriteLine("Maximum profit: " + maxProfit);
+			};
 		}
 
 		private int MaxProfit(int[] prices)
@@ -60,15 +65,6 @@ Constraints:
 			}
 
 			return maxProfit;
-		}
-
-		public void DoWork()
-		{
-			Console.WriteLine("\n=== Starting of " + GetType().Name + " exercise.");
-			Console.WriteLine("Input array: [" + string.Join(", ", inputArray) + "]");
-			var maxProfit = MaxProfit(inputArray);
-			Console.WriteLine("Maximum profit: " + maxProfit);
-			Console.WriteLine("=== Finish of " + GetType().Name + " exercise.\n");
 		}
 	}
 }

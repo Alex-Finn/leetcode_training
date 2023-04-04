@@ -1,4 +1,4 @@
-﻿using LeetCodeTraining.Interfaces;
+﻿using LeetCodeTraining.Abstractions;
 
 namespace LeetCodeTraining.Collections.TopInterviewQuestions.Array
 {
@@ -16,13 +16,19 @@ namespace LeetCodeTraining.Collections.TopInterviewQuestions.Array
 	-100 <= nums[i] <= 100
 	nums is sorted in non-decreasing order.
 	*/
-	internal class RemoveDuplicatesFromSortedArray : IExercise
+	internal class RemoveDuplicatesFromSortedArray : Exercise
 	{
-		int[] inputArray;
+		public override Action CoreOperation { get; }
 
 		public RemoveDuplicatesFromSortedArray(int[] inputArray)
 		{
-			this.inputArray = inputArray;
+			CoreOperation = () =>
+			{
+				Console.WriteLine("Input array: [" + string.Join(", ", inputArray) + "]");
+				var uniqueNumbers = RemoveDuplicates(inputArray);
+				Console.WriteLine("unique numbers: " + uniqueNumbers);
+				Console.WriteLine("Result array: [" + string.Join(", ", inputArray) + "]");
+			};
 		}
 
 		private int RemoveDuplicates(int[] nums)
@@ -40,16 +46,6 @@ namespace LeetCodeTraining.Collections.TopInterviewQuestions.Array
 			}
 
 			return uniqueCounter;
-		}
-
-		public void DoWork()
-		{
-			Console.WriteLine("\n=== Starting of " + GetType().Name + " exercise.");
-			Console.WriteLine("Input array: [" + string.Join(", ", inputArray) + "]");
-			var uniqueNumbers = RemoveDuplicates(inputArray);
-			Console.WriteLine("unique numbers: " + uniqueNumbers);
-			Console.WriteLine("Result array: [" + string.Join(", ", inputArray) + "]");
-			Console.WriteLine("=== Finish of " + GetType().Name + " exercise.\n");
 		}
 	}
 }
