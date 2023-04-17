@@ -42,6 +42,10 @@ Constraints:
 	{
 		public override Action CoreOperation { get; }
 
+		internal BestTimeToBuyAndSellStockII()
+		{
+		}
+
 		public BestTimeToBuyAndSellStockII(int[] inputArray) : base()
 		{
 			CoreOperation = () =>
@@ -52,7 +56,7 @@ Constraints:
 			};
 		}
 
-		private int MaxProfit(int[] prices)
+		public int MaxProfit(int[] prices)
 		{
 			int maxProfit = 0;
 

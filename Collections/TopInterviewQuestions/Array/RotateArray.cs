@@ -45,6 +45,10 @@ Could you do it in-place with O(1) extra space?
 	{
 		public override Action CoreOperation { get; }
 
+		internal RotateArray()
+		{
+		}
+
 		public RotateArray(int[] inputArray, int k)
 		{
 			CoreOperation = () =>
@@ -55,7 +59,7 @@ Could you do it in-place with O(1) extra space?
 			};
 		}
 
-		private void Rotate(int[] nums, int k)
+		public void Rotate(int[] nums, int k)
 		{
 
 		}

@@ -20,7 +20,12 @@ namespace LeetCodeTraining.Collections.TopInterviewQuestions.Array
 	{
 		public override Action CoreOperation { get; }
 
-		public RemoveDuplicatesFromSortedArray(int[] inputArray)
+        internal RemoveDuplicatesFromSortedArray()
+        {
+            
+        }
+
+        public RemoveDuplicatesFromSortedArray(int[] inputArray)
 		{
 			CoreOperation = () =>
 			{
@@ -31,7 +36,7 @@ namespace LeetCodeTraining.Collections.TopInterviewQuestions.Array
 			};
 		}
 
-		private int RemoveDuplicates(int[] nums)
+		public int RemoveDuplicates(int[] nums)
 		{
 			var uniqueCounter = 1;
 			var currentValue = nums[0];
