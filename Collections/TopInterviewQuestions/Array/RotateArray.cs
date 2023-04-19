@@ -43,13 +43,11 @@ Could you do it in-place with O(1) extra space?
 */
 	internal class RotateArray : Exercise
 	{
-		public override Action CoreOperation { get; }
+		public override Action? CoreOperation { get; }
 
-		internal RotateArray()
-		{
-		}
+		internal RotateArray() : base() { }
 
-		public RotateArray(int[] inputArray, int k)
+		public RotateArray(int[] inputArray, int k) : this()
 		{
 			CoreOperation = () =>
 			{
@@ -61,7 +59,59 @@ Could you do it in-place with O(1) extra space?
 
 		public void Rotate(int[] nums, int k)
 		{
+			k %= nums.Length;
 
+			var numsLength = nums.Length;
+			var transformsLeft = nums.Length;
+			var currentPosition = 0;
+			var valuePreserved = false;
+			var currentValue = 0;
+			var loopIndex = 0;
+
+			while(transformsLeft > 0)
+			{
+				var nextPosition1 = (currentPosition + k) % numsLength;
+				var nextPosition2 = (nextPosition1 + k) % numsLength;
+
+				if(currentPosition == nextPosition2)
+				{
+					(nums[currentPosition], nums[nextPosition1]) = (nums[nextPosition1], nums[currentPosition]);
+					transformsLeft -= 2;
+
+					if(transformsLeft < 1) return;
+
+					if(currentPosition + 1 != nextPosition1)
+					{
+						currentPosition += 1;
+					}
+					else
+					{
+						currentPosition += 2;
+					}
+					valuePreserved = false;
+				}
+				else
+				{
+					var preserveValue = nums[nextPosition1];
+					nums[nextPosition1] = valuePreserved ? currentValue : nums[currentPosition];
+
+					transformsLeft--;
+					if(transformsLeft < 1) return;
+
+					currentPosition = (currentPosition + k) % numsLength;
+
+					if(currentPosition == loopIndex)
+					{
+						currentPosition = (++loopIndex) % nums.Length;
+						currentValue = nums[currentPosition];
+					}
+					else
+					{
+						currentValue = preserveValue;
+						valuePreserved = true;
+					}
+				}
+			}
 		}
 	}
 }
