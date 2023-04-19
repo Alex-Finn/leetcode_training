@@ -1,6 +1,6 @@
-﻿namespace LeetCodeTraining.Helpers
+﻿namespace LeetCodeTraining.Extensions
 {
-	public static class LogHelper
+	public static class LogExtension
 	{
 		public static void WithBeforeAndAfterLogging(this Action action, string methodName)
 		{

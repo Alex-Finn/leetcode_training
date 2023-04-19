@@ -15,7 +15,7 @@ namespace LeetCodeTraining.Abstractions
 
 		public void DoWork()
 		{
-			CoreOperation.WithBeforeAndAfterLogging(TypeOfClass.Name);
+			CoreOperation?.WithBeforeAndAfterLogging(TypeOfClass.Name);
 		}
 	}
 }
