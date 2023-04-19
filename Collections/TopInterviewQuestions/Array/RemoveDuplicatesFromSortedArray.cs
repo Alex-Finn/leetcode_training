@@ -18,14 +18,11 @@ namespace LeetCodeTraining.Collections.TopInterviewQuestions.Array
 	*/
 	internal class RemoveDuplicatesFromSortedArray : Exercise
 	{
-		public override Action CoreOperation { get; }
+		public override Action? CoreOperation { get; }
 
-        internal RemoveDuplicatesFromSortedArray()
-        {
-            
-        }
+        internal RemoveDuplicatesFromSortedArray() : base() { }
 
-        public RemoveDuplicatesFromSortedArray(int[] inputArray)
+        public RemoveDuplicatesFromSortedArray(int[] inputArray) : this()
 		{
 			CoreOperation = () =>
 			{

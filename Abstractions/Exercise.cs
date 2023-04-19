@@ -1,4 +1,4 @@
-﻿using LeetCodeTraining.Helpers;
+﻿using LeetCodeTraining.Extensions;
 using LeetCodeTraining.Interfaces;
 
 namespace LeetCodeTraining.Abstractions
@@ -6,7 +6,7 @@ namespace LeetCodeTraining.Abstractions
 	internal abstract class Exercise : IExercise
 	{
 		public Type TypeOfClass { get; }
-		public abstract Action CoreOperation { get; }
+		public abstract Action? CoreOperation { get; }
 
 		public Exercise()
 		{

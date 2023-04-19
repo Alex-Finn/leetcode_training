@@ -40,13 +40,11 @@ Constraints:
 	 */
 	internal class BestTimeToBuyAndSellStockII : Exercise
 	{
-		public override Action CoreOperation { get; }
+		public override Action? CoreOperation { get; }
 
-		internal BestTimeToBuyAndSellStockII()
-		{
-		}
+		internal BestTimeToBuyAndSellStockII() : base()	{ }
 
-		public BestTimeToBuyAndSellStockII(int[] inputArray) : base()
+		public BestTimeToBuyAndSellStockII(int[] inputArray) : this()
 		{
 			CoreOperation = () =>
 			{
