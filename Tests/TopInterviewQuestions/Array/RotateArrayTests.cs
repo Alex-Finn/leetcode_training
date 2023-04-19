@@ -25,7 +25,7 @@ namespace LeetCodeTraining.Tests.TopInterviewQuestions.Array
 
 			Assert.That(() =>
 			{
-				for (int i = 0; i < inputArray.Length; i++)
+				for(int i = 0; i < inputArray.Length; i++)
 				{
 					if(expectedArray[i] != inputArray[i])
 					{
@@ -48,7 +48,30 @@ namespace LeetCodeTraining.Tests.TopInterviewQuestions.Array
 
 			Assert.That(() =>
 			{
-				for (int i = 0; i < inputArray.Length; i++)
+				for(int i = 0; i < inputArray.Length; i++)
+				{
+					if(expectedArray[i] != inputArray[i])
+					{
+						return false;
+					}
+				}
+
+				return true;
+			}, $"Arrays not same");
+		}
+
+		[Test]
+		public void Test3()
+		{
+			var stepsCount = 2;
+			var inputArray = new[] { 1, 2, 3, 4, 5, 6 };
+			var expectedArray = new[] { 5, 6, 1, 2, 3, 4 };
+
+			ra.Rotate(inputArray, stepsCount);
+
+			Assert.That(() =>
+			{
+				for(int i = 0; i < inputArray.Length; i++)
 				{
 					if(expectedArray[i] != inputArray[i])
 					{
